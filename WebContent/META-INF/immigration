@@ -1,0 +1,26 @@
+create database mobile;
+use mobile;
+
+CREATE TABLE driver(
+driver VARCHAR(50) NOT NULL,
+licenceNumber VARCHAR(50) NOT NULL,
+radius DOUBLE,
+waitTime int,
+description VARCHAR(100),
+longitude DOUBLE,
+latitude DOUBLE,
+maxPassengers int,
+PRIMARY KEY (driver)
+);
+
+CREATE TABLE passenger(
+driver VARCHAR(50) NOT NULL,
+name VARCHAR(50) NOT NULL,
+phone VARCHAR(50) NOT NULL,
+description VARCHAR(100),
+longitude DOUBLE,
+latitude DOUBLE,
+PRIMARY KEY (name)
+);
+
+show tables;
