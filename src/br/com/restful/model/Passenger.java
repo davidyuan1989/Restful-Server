@@ -7,7 +7,8 @@ public class Passenger {
 	private String name;
 	private String phone;
 	private String description;
-	private Position pos;
+	private double longitude;
+	private double latitude;
 	
 	public Passenger(){
 		
@@ -18,7 +19,8 @@ public class Passenger {
 		this.name = name;
 		this.phone = phone;
 		this.description = description;
-		this.pos = new Position(longitude, latitude);
+		this.setLongitude(longitude);
+		this.setLatitude(latitude);
 	}
 	
 	/**
@@ -57,18 +59,22 @@ public class Passenger {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	/**
-	 * @return the pos
-	 */
-	public Position getPos() {
-		return pos;
+
+	public double getLongitude() {
+		return longitude;
 	}
-	/**
-	 * @param pos the pos to set
-	 */
-	public void setPos(int longitude, int latitude) {
-		this.pos.setLongitude(longitude);
-		this.pos.setLatitude(latitude);
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
 	
 }

@@ -22,6 +22,9 @@ public class RestfulController {
 
 	public List<Passenger> getConfirmedPassengers(String driverName) {
 		List<Passenger> list = dao.findPassengerByDriver(driverName);
+		if(list.size() > 0){
+			list.add(new Passenger());
+		}
 		return list;
 	}
 
@@ -39,11 +42,14 @@ public class RestfulController {
 		List<Driver> res = new ArrayList<Driver>();
 		List<Driver> all = dao.findAllDriver();
 		for (Driver driver : all) {
-			double dis = calculateDistance(latitude, longitude, driver.getPos()
-					.getLatitude(), driver.getPos().getLongitude());
-			if(dis <= distance && dis <= driver.getRadius()){
+			double dis = calculateDistance(latitude, longitude,
+					driver.getLatitude(), driver.getLongitude());
+			if (dis <= distance && dis <= driver.getRadius()) {
 				res.add(driver);
 			}
+		}
+		if(res.size() > 0){
+			res.add(new Driver());
 		}
 		return res;
 	}

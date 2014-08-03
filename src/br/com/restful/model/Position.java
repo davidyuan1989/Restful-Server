@@ -1,5 +1,8 @@
 package br.com.restful.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="Position")
 public class Position {
 	private double longitude;
 	private double latitude;

@@ -65,8 +65,8 @@ public class RestfulDAO {
 			ps.setDouble(3, driver.getRadius());
 			ps.setInt(4, driver.getWaitTime());
 			ps.setString(5, driver.getDescription());
-			ps.setDouble(6, driver.getPos().getLongitude());
-			ps.setDouble(7, driver.getPos().getLatitude());
+			ps.setDouble(6, driver.getLongitude());
+			ps.setDouble(7, driver.getLatitude());
 			ps.setInt(8, driver.getMaxPassenger());
 			ps.executeUpdate();
 			// ResultSet rs = ps.getGeneratedKeys();
@@ -90,8 +90,8 @@ public class RestfulDAO {
 			ps.setString(2, passenger.getName());
 			ps.setString(3, passenger.getPhone());
 			ps.setString(4, passenger.getDescription());
-			ps.setDouble(5, passenger.getPos().getLongitude());
-			ps.setDouble(6, passenger.getPos().getLatitude());
+			ps.setDouble(5, passenger.getLongitude());
+			ps.setDouble(6, passenger.getLatitude());
 			ps.executeUpdate();
 			// ResultSet rs = ps.getGeneratedKeys();
 			// rs.next();

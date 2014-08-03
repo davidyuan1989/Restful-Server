@@ -10,7 +10,8 @@ public class Driver {
 	private double radius;
 	private int waitTime;
 	private String description;
-	private Position pos;
+	private double longitude;
+	private double latitude;
 	private int maxPassenger;
 	
 	public Driver(){
@@ -25,7 +26,8 @@ public class Driver {
 		this.radius = radius;
 		this.waitTime = waitTime;
 		this.description = description;
-		this.pos = new Position(longitude, latitude);
+		this.setLongitude(longitude);
+		this.setLatitude(latitude);
 		this.maxPassenger = maxPassenger;
 	}
 	
@@ -78,19 +80,6 @@ public class Driver {
 		this.description = description;
 	}
 	/**
-	 * @return the pos
-	 */
-	public Position getPos() {
-		return pos;
-	}
-	/**
-	 * @param pos the pos to set
-	 */
-	public void setPos(int longitude, int latitude) {
-		this.pos.setLongitude(longitude);
-		this.pos.setLatitude(latitude);
-	}
-	/**
 	 * @return the driver
 	 */
 	public String getDriver() {
@@ -113,6 +102,22 @@ public class Driver {
 	 */
 	public void setMaxPassenger(int maxPassenger) {
 		this.maxPassenger = maxPassenger;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
 	
 }
